@@ -4,19 +4,9 @@ $( "document" ).ready(function() {
         var fChara = userInput.charAt(0);
         var fTwoCharas = userInput.slice(0, 2);
         var aSentence = userInput.split(" ");
-        var NChara0 = userInput.startsWith("0");
-        var NChara1 = userInput.startsWith("1");
-        var NChara2 = userInput.startsWith("2");
-        var NChara3 = userInput.startsWith("3");
-        var NChara4 = userInput.startsWith("4");
-        var NChara5 = userInput.startsWith("5");
-        var NChara6 = userInput.startsWith("6");
-        var NChara7 = userInput.startsWith("7");
-        var NChara8 = userInput.startsWith("8");
-        var NChara9 = userInput.startsWith("9");
         var testChara = fChara.toLowerCase();
         var testTwoCharas = fTwoCharas.toLowerCase();
-        if (NChara0 === true || NChara1 === true || NChara2 === true || NChara3 === true || NChara4 === true || NChara5 === true || NChara6 === true || NChara7 === true || NChara8 === true || NChara9 === true) {
+        if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(fChara)) {
             $(".output").text("");
             $(".output").append("This is not a word, please enter something that has letters.");
         } else if (aSentence != userInput) {
@@ -52,5 +42,9 @@ $( "document" ).ready(function() {
             $(".output").append(restCharas + ay);
         }
      });
+    $("goBack").click(function() {
+        var pigInput = $("#piglatin").val();
+
+    });
 //
 });
